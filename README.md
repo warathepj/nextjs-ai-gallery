@@ -1,8 +1,4 @@
-# mysql
-https://console.aiven.io/account/a4cb045b9573/project/warathepj-39dd/services
 
-# folder
-D:\Project\Javascript\Project\ai-gallery
 
 
 
