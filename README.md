@@ -1,8 +1,21 @@
+# task
+https://nextjs.org/docs/messages/next-image-unconfigured-host
 
+# ngrok
+https://ngrok.com/docs/getting-started/
+F:\ngrok
 
+# mysql
+https://console.aiven.io/account/a4cb045b9573/project/warathepj-39dd/services
 
+# folder
+D:\Project\Javascript\Project\ai-gallery
 
+# ui
+https://dribbble.com/shots/22566106-Image-Gallery-UI
 
+# icon
+https://icones.js.org/collection/material-symbols
 
 
 
