@@ -1,22 +1,17 @@
 // app/[id]/page.jsx/
-//in app/[id]/page.jsx/ render images.path === params.id
-// ImageContext from 'app/context/ImageContext';
 
 "use client"
-// import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useState, useEffect, useContext } from 'react';
-import ImageContext from '../context/ImageContext';
-import Button from '../components/Button';
+import ImageContext from '../../context/ImageContext';
+import Button from '../../components/Button';
 
 const TagPage = ({ params }) => {
-  console.log("params.id : ", params.id)
   const [shuffleEnabled, setShuffleEnabled] = useState(true);
   const { baseUrl, images } = useContext(ImageContext);
-  console.log("images in [id] : ", images) // array of object
-  // from app/[id]/page.jsx/
-  const image = images.filter(image => image.tag.includes(params.id));
+  console.log("images in [categoryId] : ", images) // 10/8 array of object (all image)
+  const image = images.filter(image => image.tag.includes(params.categoryId));
   // render path of each image in pre tag,
   // ImageContext is from 'app/context/ImageContext', how to code?
 
@@ -52,7 +47,7 @@ const TagPage = ({ params }) => {
   return (
     <>
       <div>
-        {/* <pre>params.id : {params.id}</pre> */}
+        <pre>params.categoryId : {params.categoryId}</pre>
 
         {/* <div>
           {image.map((img, index) => (
@@ -60,12 +55,14 @@ const TagPage = ({ params }) => {
           ))}
         </div> */}
 
-<h3 className="text-center text-2xl font-bold mb-4">{params.id.charAt(0).toUpperCase() + params.id.slice(1)}</h3>
+{/* <h3 
+    className="text-center text-2xl font-bold mb-4"
+>{params.id.charAt(0).toUpperCase() + params.id.slice(1)}</h3> */}
 
 
         <div className='grid grid-cols-2 gap-2'>
           {image.map((img, index) => (
-            <Link key={image.path} href={`/image/${img.path}`}>
+            <Link key={image.path} href={`/category/${params.categoryId}/image/${img.path}`}>
 
             <div key={index} className="relative hover:cursor-pointer">
               {/* <pre>"img.path", {img.path}</pre> */}

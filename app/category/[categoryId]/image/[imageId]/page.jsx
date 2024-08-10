@@ -1,21 +1,14 @@
-// app/image/[id]/page.js/
-// "use client"
-//when render app/image/[id]/page.js/, if image not favorite before,
-// then initial isFavorite=false
+// app/category/[categoryId]/image/[imageId]/page.js/
 
-
-// 
-//from app/image/[id]/page.js and context/FavoriteContext.js
-// render favorite image in app/favorite/page.jsx
 "use client";
 import { useContext, useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
 import Image from 'next/image'
 
-import ImageContext from '../../context/ImageContext';
-import FavoriteContext from '../../context/FavoriteContext';
-import Button from '../../components/Button';
+import ImageContext from '../../../../context/ImageContext';
+import FavoriteContext from '../../../../context/FavoriteContext';
+import Button from '../../../../components/Button';
 import FavoriteOutline from '@/app/components/(icon)/FavoriteOutline';
 import Favorite from '@/app/components/(icon)/Favorite';
 
@@ -25,8 +18,8 @@ export default function ImagePage({ params }) {
   const { favoriteImageIds, addFavorite, removeFavorite } = useContext(FavoriteContext);
   // const router = useRouter();
 
-  const image = images.find(image => image.path === params.id);
-  const file = params.id;
+  const image = images.find(image => image.path === params.imageId);
+  const file = params.imageId;
   console.log("favoriteImageIds: ", favoriteImageIds);
   console.log("type of favoriteImageIds: ", typeof favoriteImageIds);
 
@@ -49,7 +42,7 @@ export default function ImagePage({ params }) {
   
   return (
     <div>
-
+        <pre>params.id: {params.imageId}</pre>
 
       {image ? (
         <>
@@ -64,20 +57,13 @@ export default function ImagePage({ params }) {
       ) : <p>Image not found</p>}
 
       {image ? <p>Prompt : {image.prompt}</p> : <p>Image not found</p>}
-      <Link href="/"> 
+
+      <Link href={`/category/${params.categoryId}`}> 
   <Button className="bg-cyan-500 hover:bg-cyan-300 text-white font-bold mt-4 py-2 px-4 rounded-full">
     Back
   </Button>
-</Link>
-    {/* //when click app/image/[id]/page.js/ */}
-      <Button
-      // go to "/"
-        className="bg-cyan-500 hover:bg-cyan-300 text-white font-bold mt-4 py-2 px-4 rounded-full"
-      >
-        Back
-      </Button>
-      
-
+</Link> 
+    
     {/* in context/FavoriteContext */}
     {/* <div onClick={toggleFavorite} style={{ cursor: 'pointer' }}>  */}
       <div onClick={() => toggleFavorite(params.id)}>

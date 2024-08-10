@@ -2,6 +2,7 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { ImageProvider } from './context/ImageContext';
+import { FavoriteProvider } from './context/FavoriteContext';
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -15,7 +16,16 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={inter.className}>
         <ImageProvider> {/* Wrap your application with the provider */}
+        <FavoriteProvider>
+        <h1 
+        className="my-4 text-center text-3xl font-bold"
+      >AI-Gallery</h1>
           {children} 
+                    <footer className="mt-10 text-center text-gray-500">
+            <p>© 2024 CorgiDev. All rights reserved.</p>
+          </footer>
+          
+          </FavoriteProvider>
         </ImageProvider>
       </body>
     </html>
