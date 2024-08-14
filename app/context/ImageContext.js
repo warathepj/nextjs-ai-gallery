@@ -262,25 +262,25 @@ export const ImageProvider = ({ children }) => {
     },
     {
       path: 'fri10.jpeg',
-      prompt: 'ad888888',
-      tag: []
+      prompt: 'Corgi on beach.',
+      tag: ['corgi', 'dog', 'animal', 'beach', 'bluesky']
     },
     {
       path: 'fri11.jpeg',
-      prompt: 'ad888888',
-      tag: []
+      prompt: 'Corgi on beach.',
+      tag: ['corgi', 'dog', 'animal', 'beach', 'bluesky']
 
     },
     {
       path: 'fri12.jpeg',
-      prompt: 'ad888888',
-      tag: []
+      prompt: 'Corgi on beach.',
+      tag: ['corgi', 'dog', 'animal', 'beach', 'bluesky']
 
     },
     {
       path: 'fri13.jpeg',
-      prompt: 'ad888888',
-      tag: []
+      prompt: 'Corgi on beach.',
+      tag: ['corgi', 'dog', 'animal', 'beach', 'bluesky']
 
     }
   ];

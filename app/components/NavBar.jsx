@@ -39,7 +39,7 @@ const NavBar = () => {
         </Button>
       </Link>
 
-      <Link href="/green">
+      <Link href="/category/green">
         <Button
           className="bg-green-500 hover:bg-green-300 text-white 
           font-bold py-2 px-4 rounded-full"
@@ -49,7 +49,7 @@ const NavBar = () => {
         </Button>
       </Link>
 
-      <Link href="/red">
+      <Link href="/category/red">
         <Button
           className="bg-red-500 hover:bg-red-300 text-white 
           font-bold py-2 px-4 rounded-full"
@@ -59,7 +59,7 @@ const NavBar = () => {
         </Button>
       </Link>
 
-      <Link href="/pink">
+      <Link href="/category/pink">
         <Button
           className="bg-pink-500 hover:bg-pink-300 text-white 
           font-bold py-2 px-4 rounded-full"
@@ -69,7 +69,7 @@ const NavBar = () => {
         </Button>
       </Link>
       
-      <Link href="/orange">
+      <Link href="/category/orange">
         <Button
           className="bg-orange-500 hover:bg-orange-300 text-white 
           font-bold py-2 px-4 rounded-full"
@@ -79,7 +79,7 @@ const NavBar = () => {
         </Button>
       </Link>
 
-      <Link href="/bluesky">
+      <Link href="/category/bluesky">
         <Button
           className="bg-sky-500 hover:bg-sky-300 text-white 
           font-bold py-2 px-4 rounded-full"
@@ -89,7 +89,7 @@ const NavBar = () => {
         </Button>
       </Link>
 
-      <Link href="/metal">
+      <Link href="/category/metal">
         <Button
           className="bg-gray-500 hover:bg-gray-300 text-white 
           font-bold py-2 px-4 rounded-full"
@@ -99,7 +99,7 @@ const NavBar = () => {
         </Button>
       </Link>
       
-      <Link href="/city">
+      <Link href="/category/city">
         <Button
           className="bg-stone-500 hover:bg-stone-300 text-white 
           font-bold py-2 px-4 rounded-full"
@@ -111,7 +111,7 @@ const NavBar = () => {
 
       
       
-      <Link href="/flower">
+      <Link href="/category/flower">
         <Button
           className="bg-stone-500 hover:bg-stone-300 text-white 
           font-bold py-2 px-4 rounded-full"
@@ -121,7 +121,7 @@ const NavBar = () => {
         </Button>
       </Link>
       
-      <Link href="/landscape">
+      <Link href="/category/landscape">
         <Button
           className="bg-stone-500 hover:bg-stone-300 text-white 
           font-bold py-2 px-4 rounded-full"
@@ -131,7 +131,7 @@ const NavBar = () => {
         </Button>
       </Link>
 
-      <Link href="/motorcycle">
+      <Link href="/category/motorcycle">
         <Button
           className="bg-stone-500 hover:bg-stone-300 text-white 
           font-bold py-2 px-4 rounded-full"
@@ -141,7 +141,7 @@ const NavBar = () => {
         </Button>
       </Link>
 
-      <Link href="/space">
+      <Link href="/category/space">
         <Button
           className="bg-stone-500 hover:bg-stone-300 text-white 
           font-bold py-2 px-4 rounded-full"

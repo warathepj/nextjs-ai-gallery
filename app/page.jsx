@@ -1,5 +1,6 @@
 // app/page.js/
-//
+//from app/page.js/, which code is about limit render
+// image to 6
 "use client"
 import Link from 'next/link';
 import Image from 'next/image';
@@ -18,10 +19,7 @@ export default function Home() {
   const [selectedTag, setSelectedTag] = useState(null);
   const [shuffleEnabled, setShuffleEnabled] = useState(true);
 
-  // set state of selectedTag, setSelectedTag to ./context/ImageContext
-  // set state to ImageContext from './context/ImageContext';
-
-  // In app/page.jsx
+  
 
   function handleTagClick(tag) {
     setSelectedTag(tag);
@@ -29,9 +27,7 @@ export default function Home() {
   }
 
 
-  // In app/page.jsx render
   const filteredImages = selectedTag // selectedTag ok
-    // in p tag
     ? images.filter((image) => image.tag && image.tag.includes(selectedTag))
     : images;
   // THIS CODE OK, LOAD RANDOW ALL IMAGE
@@ -64,17 +60,16 @@ function shuffle(array, startIndex, usedImages) {
     return usedImages instanceof Set ? !usedImages.has(i) : true; 
   });
   const shuffledIndices = availableIndices.sort(() => 0.5 - Math.random());
-  return shuffledIndices.slice(startIndex, startIndex + 6).map(i => array[i]);
+  return shuffledIndices.slice(startIndex, startIndex + 8).map(i => array[i]);
 }
-
-  // images are dupplicate, how to fix?
 
   return (
     <div>
       
       <div className='grid grid-cols-2 gap-2'>
         {displayedImages.map((image) => (
-          <Link key={image.path} href={`/image/${image.path}`}>
+          // <Link key={image.path} href={`/image/${image.path}`}>
+          <Link key={image.path} href={`category/all/image/${image.path}`}>
             <div key={image.path} className="relative hover:cursor-pointer">
               {/* ... image rendering code ... */}
               <Image

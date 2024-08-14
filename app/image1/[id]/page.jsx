@@ -69,17 +69,7 @@ export default function ImagePage({ params }) {
     Back
   </Button>
 </Link>
-    {/* //when click app/image/[id]/page.js/ */}
-      <Button
-      // go to "/"
-        className="bg-cyan-500 hover:bg-cyan-300 text-white font-bold mt-4 py-2 px-4 rounded-full"
-      >
-        Back
-      </Button>
-      
-
-    {/* in context/FavoriteContext */}
-    {/* <div onClick={toggleFavorite} style={{ cursor: 'pointer' }}>  */}
+    
       <div onClick={() => toggleFavorite(params.id)}>
         {isFavorite ? <Favorite /> : <FavoriteOutline />}
       </div> 

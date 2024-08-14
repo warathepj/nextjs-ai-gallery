@@ -17,6 +17,35 @@ export default function Favorite() {
 
   return (
     <div>
+      <pre>--------------DEBUG start--------------</pre>
+      <div className='grid grid-cols-2 gap-2'>
+        {image.map((image) => (
+          // <Link key={image.path} href={`category/[categoryId]/image/${image.path}`}>
+          <Link key={image.path} href={`/category/${params.categoryId}/image/${image.path}`}> 
+          
+            <div key={image.path} className="relative hover:cursor-pointer">
+              {/* ... image rendering code ... */}
+              <Image
+                src={`${baseUrl}${image.path}`}
+                alt={image.prompt}
+                width={500}
+                height={500}
+              />
+
+              <div
+                className="absolute z-10 bottom-0 left-0 w-full h-full 
+                bg-black opacity-0 hover:opacity-60 transition-opacity 
+                overflow-hidden break-words"
+              >
+                <p
+                  className="text-xs text-white text-center p-4 w-4/5 h-4/5">{image.prompt}</p>
+              </div>
+            </div>
+          </Link>
+        ))}
+      </div>
+      <pre>--------------DEBUG end--------------</pre>
+      <pre>favoriteImageIds from favorite/page: {favoriteImageIds}</pre>
       <h1>Favorite Images</h1>
       <div className='grid grid-cols-2 gap-2'>
         {favoriteImageIds.map((imageId) => (

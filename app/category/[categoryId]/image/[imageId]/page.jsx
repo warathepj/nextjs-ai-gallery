@@ -25,24 +25,27 @@ export default function ImagePage({ params }) {
 
   // set state isFavorite to context/FavoriteContext
   // const isFavorite = favoriteImageIds.has(params.id);
-  const isFavorite = favoriteImageIds.includes(params.id);
+
+  //every time render app/category/[categoryId]/image/[imageId]/page.js/
+  // initial set isFavorite to false
   // const [isFavorite, setIsFavorite] = useState(false);
-//state app/image/[id]/page.js/favImage to array of string in context/FavoriteContext
-     const favImage = isFavorite ? file : null; 
- console.log("favImage: ", favImage);
+  const isFavorite = favoriteImageIds.includes(params.imageId);
+  //state app/image/[id]/page.js/favImage to array of string in context/FavoriteContext
+  const favImage = isFavorite ? file : null;
+  console.log("favImage: ", favImage);
 
- const toggleFavorite = () => {
-  if (isFavorite) {
-    removeFavorite(params.id);
-  } else {
-    addFavorite(params.id);
-  }
-};
+  const toggleFavorite = () => {
+    if (isFavorite) {
+      removeFavorite(params.imageId);
+    } else {
+      addFavorite(params.imageId);
+    }
+  };
 
-  
+
   return (
     <div>
-        <pre>params.id: {params.imageId}</pre>
+      <pre>params.id: {params.imageId}</pre>
 
       {image ? (
         <>
@@ -57,27 +60,34 @@ export default function ImagePage({ params }) {
       ) : <p>Image not found</p>}
 
       {image ? <p>Prompt : {image.prompt}</p> : <p>Image not found</p>}
+      {/* //from app/category/[categoryId]/image/[imageId]/page.js/ */}
+      {/* if ${params.categoryId} is all, then go to "/" */}
+      <Link href={params.categoryId === 'all' ? '/' : `/category/${params.categoryId}`}>
+        <Button className="bg-cyan-500 hover:bg-cyan-300 text-white font-bold mt-4 py-2 px-4 rounded-full">
+          Back
+        </Button>
+      </Link>
 
-      <Link href={`/category/${params.categoryId}`}> 
-  <Button className="bg-cyan-500 hover:bg-cyan-300 text-white font-bold mt-4 py-2 px-4 rounded-full">
-    Back
-  </Button>
-</Link> 
-    
-    {/* in context/FavoriteContext */}
-    {/* <div onClick={toggleFavorite} style={{ cursor: 'pointer' }}>  */}
+      {/* <Link href={`/category/${params.categoryId}`}>
+        <Button className="bg-cyan-500 hover:bg-cyan-300 text-white font-bold mt-4 py-2 px-4 rounded-full">
+          Back
+        </Button>
+      </Link> */}
+
+      {/* in context/FavoriteContext */}
+      {/* <div onClick={toggleFavorite} style={{ cursor: 'pointer' }}>  */}
       <div onClick={() => toggleFavorite(params.id)}>
         {isFavorite ? <Favorite /> : <FavoriteOutline />}
-      </div> 
-    {/* to <Favorite /> in same position*/}
+      </div>
+      {/* to <Favorite /> in same position*/}
 
-    <pre>params.id: {params.id}</pre>
-    <pre>file: {file}</pre>
+      <pre>params.id: {params.id}</pre>
+      <pre>file: {file}</pre>
 
-    <pre>isFavorite: {isFavorite.toString()}</pre>
-    <pre>favImage: {favImage}</pre>
+      <pre>isFavorite: {isFavorite.toString()}</pre>
+      <pre>favImage: {favImage}</pre>
 
-    
+
     </div>
   );
 }

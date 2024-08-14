@@ -1,5 +1,5 @@
 # task
-[imageId]/page/Back
+favorite
 
 # ngrok
 https://ngrok.com/docs/getting-started/
