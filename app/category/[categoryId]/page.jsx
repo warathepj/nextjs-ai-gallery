@@ -1,6 +1,7 @@
 // app/category/[categoryId]/page.js/
-//loop app/category/[categoryId]/page.js/image and render
-// image.path in pre tag
+//from app/category/[categoryId]/page.js/ 
+// initial render only 2 image.
+
 
 "use client"
 import Link from 'next/link';
@@ -22,13 +23,13 @@ export default function CategoryPage({ params }) {
   const uniqueTags = getUniqueTags(images); // tag list
   // from app/page.js/ 
   const [selectedTag, setSelectedTag] = useState(null);
-  const [shuffleEnabled, setShuffleEnabled] = useState(true);
   const param = params.categoryId;
   console.log("params.id in [categoryId] : ", param)
   // 12/8 ok
   const image = images.filter(image => image.tag.includes(param));
   console.log("image in [categoryId] : ", image)
   // 12/8 ok array of object
+  const [visiblePictures, setVisiblePictures] = useState(8); // Start by showing 2 pictures
 
   // set state of selectedTag, setSelectedTag to ./context/ImageContext
   // set state to ImageContext from './context/ImageContext';
@@ -44,42 +45,27 @@ export default function CategoryPage({ params }) {
   const filteredImages = selectedTag // selectedTag ok
     ? images.filter((image) => image.tag && image.tag.includes(selectedTag))
     : images;
-  // THIS CODE OK, LOAD RANDOW ALL IMAGE
-  // In app/page.jsx 
-  // function shuffle(array) {
-  //   //when click load more button load next 4 image, first 4 image still exist
-  //   for (let i = array.length - 1; i > 0; i--) {
-  //     const j = Math.floor(Math.random() * (i + 1));
-  //     [array[i], array[j]] = [array[j], array[i]];
-  //   }
-
-  //   // THIS CODE OK, LOAD ONLY 4 IMAGE
-  //   return array.slice(0, 6);
-  //   // THIS CODE OK, LOAD ONLY 4 IMAGE
-  // }
-  // THIS CODE OK, LOAD RANDOW ALL IMAGE
 
 //from app/page.js/
-  const [displayedImages, setDisplayedImages] = useState(shuffle(images, 0));
+  // const [displayedImages, setDisplayedImages] = useState(shuffle(images, 0));
   const [usedImages, setUsedImages] = useState(new Set());
 
   const handleLoadMore = () => {
-  const newImages = shuffle(images, displayedImages.length);
-  setDisplayedImages(prevImages => [...prevImages, ...newImages]);
-  newImages.forEach(img => setUsedImages(prevUsed => new Set([...prevUsed, images.indexOf(img)])));
-}
+  setVisiblePictures(visiblePictures + 8); 
+};
 
-function shuffle(array, startIndex, usedImages) {
-  const availableIndices = Array.from(Array(array.length).keys()).filter(i => {
-    return usedImages instanceof Set ? !usedImages.has(i) : true; 
-  });
-  const shuffledIndices = availableIndices.sort(() => 0.5 - Math.random());
-  return shuffledIndices.slice(startIndex, startIndex + 6).map(i => array[i]);
-}
+
+// function shuffle(array, startIndex, usedImages) {
+//   const availableIndices = Array.from(Array(array.length).keys()).filter(i => {
+//     return usedImages instanceof Set ? !usedImages.has(i) : true; 
+//   });
+//   const shuffledIndices = availableIndices.sort(() => 0.5 - Math.random());
+//   return shuffledIndices.slice(startIndex, startIndex + 2).map(i => array[i]);
+// }
 
   return (
     <div>
-      <pre>----------DEBUG------------</pre>
+      <pre>----------DEBUG start------------</pre>
       <pre>param : {param}</pre>
       <pre>......</pre>
       <pre>
@@ -92,9 +78,9 @@ function shuffle(array, startIndex, usedImages) {
       ))}
     </pre>
 
-      <pre>----------DEBUG------------</pre>
+      <pre>----------DEBUG end------------</pre>
       <div className='grid grid-cols-2 gap-2'>
-        {image.map((image) => (
+      {image.slice(0, visiblePictures).map((image) => (
           // <Link key={image.path} href={`category/[categoryId]/image/${image.path}`}>
           <Link key={image.path} href={`/category/${params.categoryId}/image/${image.path}`}> 
           
@@ -122,6 +108,7 @@ function shuffle(array, startIndex, usedImages) {
       
 
       <div class="flex justify-center">
+{/* //when click app/category/[categoryId]/page.js/ */}
         <Button
           className="bg-blue-500 hover:bg-blue-300 text-white 
           font-bold mt-6 mb-3 py-2 px-4 rounded-full mx-auto"
@@ -129,6 +116,7 @@ function shuffle(array, startIndex, usedImages) {
         >
           Load More
         </Button>
+        {/* Load 2 more pictures */}
       </div>
 
       <div class="flex justify-center">

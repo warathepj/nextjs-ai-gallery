@@ -85,7 +85,8 @@ function shuffle(array, startIndex, usedImages) {
                 overflow-hidden break-words"
               >
                 <p
-                  className="text-xs text-white text-center p-4 w-4/5 h-4/5">{image.prompt}</p>
+                  className="text-xs text-white text-center p-4 w-4/5 h-4/5"
+                >{image.prompt}</p>
               </div>
             </div>
           </Link>

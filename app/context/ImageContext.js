@@ -16,7 +16,66 @@ export const ImageProvider = ({ children }) => {
   // };
 // app/context/ImageContext.js/images.path
   const images = [
-    
+    {
+      path: '060.jpg',
+      prompt: "A stunning night sky scene with Mount Fuji as the focal point.Include the Milky Way stretching across the sky.Use a deep blue sky with twinkling stars.Add a touch of purple and pink hues for a dreamy atmosphere.Capture the silhouette of the mountain against the vibrant night sky.Consider reflecting the scene in a calm lake for added depth.Style:Dramatic and awe-inspiringHigh contrast between light and dark",
+      tag: ['purple', 'landscape']
+    },
+    {
+      path: '059.jpg',
+      prompt: "A stunning night sky scene with Mount Fuji as the focal point.Include the Milky Way stretching across the sky.Use a deep blue sky with twinkling stars.Add a touch of purple and pink hues for a dreamy atmosphere.Capture the silhouette of the mountain against the vibrant night sky.Consider reflecting the scene in a calm lake for added depth.Style:Dramatic and awe-inspiringHigh contrast between light and dark",
+      tag: ['purple', 'landscape']
+    },
+    {
+      path: '058.jpg',
+      prompt: "A stunning night sky scene with Mount Fuji as the focal point.Include the Milky Way stretching across the sky.Use a deep blue sky with twinkling stars.Add a touch of purple and pink hues for a dreamy atmosphere.Capture the silhouette of the mountain against the vibrant night sky.Consider reflecting the scene in a calm lake for added depth.Style:Dramatic and awe-inspiringHigh contrast between light and dark",
+      tag: ['purple', 'landscape']
+    },
+    {
+      path: '057.jpg',
+      prompt: "A stunning night sky scene with Mount Fuji as the focal point.Include the Milky Way stretching across the sky.Use a deep blue sky with twinkling stars.Add a touch of purple and pink hues for a dreamy atmosphere.Capture the silhouette of the mountain against the vibrant night sky.Consider reflecting the scene in a calm lake for added depth.Style:Dramatic and awe-inspiringHigh contrast between light and dark",
+      tag: ['purple', 'landscape']
+    },
+    {
+      path: '056.jpg',
+      prompt: "A serene, dreamlike landscape featuring a snow-capped mountain range reflected in a calm, turquoise lake. Pink wildflowers bloom on the lakeshore, contrasting against the rocky terrain. A crescent moon hangs in a clear, blue sky.",
+      tag: ['bluesky', 'landscape']
+    },
+    {
+      path: '055.jpg',
+      prompt: "A serene, dreamlike landscape featuring a snow-capped mountain range reflected in a calm, turquoise lake. Pink wildflowers bloom on the lakeshore, contrasting against the rocky terrain. A crescent moon hangs in a clear, blue sky.",
+      tag: ['bluesky', 'landscape']
+    },
+    {
+      path: '054.jpg',
+      prompt: "A serene, dreamlike landscape featuring a snow-capped mountain range reflected in a calm, turquoise lake. Pink wildflowers bloom on the lakeshore, contrasting against the rocky terrain. A crescent moon hangs in a clear, blue sky.",
+      tag: ['bluesky', 'landscape']
+    },
+    {
+      path: '053.jpg',
+      prompt: "A serene, dreamlike landscape featuring a snow-capped mountain range reflected in a calm, turquoise lake. Pink wildflowers bloom on the lakeshore, contrasting against the rocky terrain. A crescent moon hangs in a clear, blue sky.",
+      tag: ['bluesky', 'landscape']
+    },
+    {
+      path: '052.jpg',
+      prompt: "A cute rabbit with orange",
+      tag: ['animal', 'rabbit', 'orange']
+    },
+    {
+      path: '051.jpg',
+      prompt: "A cute rabbit with orange",
+      tag: ['animal', 'rabbit', 'orange']
+    },
+    {
+      path: '050.jpg',
+      prompt: "A cute rabbit with orange",
+      tag: ['animal', 'rabbit', 'orange']
+    },
+    {
+      path: '049.jpg',
+      prompt: "A cute rabbit with orange",
+      tag: ['animal', 'rabbit', 'orange']
+    },
     {
       path: '048.jpg',
       prompt: "A large, full moon. The moon is prominently displayed in the center of the image and takes up a significant portion of the sky. It has a bright, white glow and appears to be full.A silhouetted cherry blossom tree. A silhouetted tree with delicate branches is visible in the foreground of the image. The tree is partially obscured by the moon but appears to be in bloom.Reddish Mount Fuji. A majestic mountain with a reddish hue is visible in the background of the image. The mountain is partially obscured by the moon but appears to be tall and imposing.Calm, serene, and peaceful atmosphere: The overall atmosphere of the image is calm, serene, and peaceful. The soft lighting and gentle colors contribute to this feeling.Slightly mystical or ethereal. The image has a slightly mystical or ethereal quality, perhaps due to the prominence of the moon and the silhouetted cherry blossom tree.",
@@ -280,7 +339,7 @@ export const ImageProvider = ({ children }) => {
     {
       path: 'fri13.jpeg',
       prompt: 'Corgi on beach.',
-      tag: ['corgi', 'dog', 'animal', 'beach', 'bluesky']
+      tag: ['landscape', 'bluesky']
 
     }
   ];

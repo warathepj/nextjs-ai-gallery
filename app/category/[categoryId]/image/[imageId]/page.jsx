@@ -61,8 +61,13 @@ export default function ImagePage({ params }) {
 
       {image ? <p>Prompt : {image.prompt}</p> : <p>Image not found</p>}
       {/* //from app/category/[categoryId]/image/[imageId]/page.js/ */}
-      {/* if ${params.categoryId} is all, then go to "/" */}
-      <Link href={params.categoryId === 'all' ? '/' : `/category/${params.categoryId}`}>
+      {/* if ${params.categoryId} is favorite, then go to "/favorite" */}
+      {/* <Link href={params.categoryId === 'all' ? '/' : `/category/${params.categoryId}`}> */}
+      <Link href={
+  params.categoryId === 'all' ? '/' :
+  params.categoryId === 'favorite' ? '/favorite' :
+  `/category/${params.categoryId}`
+}>
         <Button className="bg-cyan-500 hover:bg-cyan-300 text-white font-bold mt-4 py-2 px-4 rounded-full">
           Back
         </Button>
