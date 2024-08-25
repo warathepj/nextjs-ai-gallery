@@ -5,19 +5,18 @@ import ImageContext from '../context/ImageContext';
 import Button from './Button';
 
 const NavBar = () => {
-    return (
-      <div className='flex flex-wrap justify-around'>
-        <Link href="/">
+  return (
+    <div className='flex flex-wrap justify-around'>
+      <Link href="/">
         <Button
           className="bg-lime-500 hover:bg-lime-300 text-white 
           font-bold py-2 px-4 rounded-full"
-          // onClick={() => handleTagClick('favorite')}
         >
           Home
         </Button>
       </Link>
 
-        <Link href="/favorite">
+      <Link href="/favorite">
         <Button
           className="bg-red-500 hover:bg-red-300 text-white 
           font-bold py-2 px-4 rounded-full"
@@ -36,20 +35,16 @@ const NavBar = () => {
           Yellow
         </Button>
       </Link>
-      
-      {/* when click on app/page.js/ */}
-      <Link href="/category/purple">
+
+      <Link href="/category/pink">
         <Button
-          // go to "/purple"
-          className="bg-purple-500 hover:bg-purple-300 text-white 
+          className="bg-pink-500 hover:bg-pink-300 text-white 
           font-bold py-2 px-4 rounded-full"
-          onClick={() => handleTagClick('purple')}
+          onClick={() => handleTagClick('pink')}
         >
-          Purple
+          Pink
         </Button>
       </Link>
-
-     
 
       <Link href="/category/green">
         <Button
@@ -61,26 +56,6 @@ const NavBar = () => {
         </Button>
       </Link>
 
-      <Link href="/category/red">
-        <Button
-          className="bg-red-500 hover:bg-red-300 text-white 
-          font-bold py-2 px-4 rounded-full"
-          onClick={() => handleTagClick('red')}
-        >
-          Red
-        </Button>
-      </Link>
-
-      <Link href="/category/pink">
-        <Button
-          className="bg-pink-500 hover:bg-pink-300 text-white 
-          font-bold py-2 px-4 rounded-full"
-          onClick={() => handleTagClick('pink')}
-        >
-          Pink
-        </Button>
-      </Link>
-      
       <Link href="/category/orange">
         <Button
           className="bg-orange-500 hover:bg-orange-300 text-white 
@@ -101,6 +76,26 @@ const NavBar = () => {
         </Button>
       </Link>
 
+      <Link href="/category/purple">
+        <Button
+          className="bg-purple-500 hover:bg-purple-300 text-white 
+          font-bold py-2 px-4 rounded-full"
+          onClick={() => handleTagClick('purple')}
+        >
+          Purple
+        </Button>
+      </Link>
+
+      <Link href="/category/red">
+        <Button
+          className="bg-red-500 hover:bg-red-300 text-white 
+          font-bold py-2 px-4 rounded-full"
+          onClick={() => handleTagClick('red')}
+        >
+          Red
+        </Button>
+      </Link>
+
       <Link href="/category/metal">
         <Button
           className="bg-gray-500 hover:bg-gray-300 text-white 
@@ -110,7 +105,7 @@ const NavBar = () => {
           Metal
         </Button>
       </Link>
-      
+
       <Link href="/category/animal">
         <Button
           className="bg-stone-500 hover:bg-stone-300 text-white 
@@ -131,6 +126,26 @@ const NavBar = () => {
         </Button>
       </Link>
 
+      <Link href="/category/cat">
+        <Button
+          className="bg-stone-500 hover:bg-stone-300 text-white 
+          font-bold py-2 px-4 rounded-full"
+          onClick={() => handleTagClick('cat')}
+        >
+          Cat
+        </Button>
+      </Link>
+
+      <Link href="/category/city">
+        <Button
+          className="bg-stone-500 hover:bg-stone-300 text-white 
+          font-bold py-2 px-4 rounded-full"
+          onClick={() => handleTagClick('city')}
+        >
+          City
+        </Button>
+      </Link>
+
       <Link href="/category/corgi">
         <Button
           className="bg-stone-500 hover:bg-stone-300 text-white 
@@ -138,6 +153,16 @@ const NavBar = () => {
           onClick={() => handleTagClick('corgi')}
         >
           Corgi
+        </Button>
+      </Link>
+
+      <Link href="/category/dinosaur">
+        <Button
+          className="bg-stone-500 hover:bg-stone-300 text-white 
+          font-bold py-2 px-4 rounded-full"
+          onClick={() => handleTagClick('dinosaur')}
+        >
+          Dinosaur
         </Button>
       </Link>
 
@@ -150,18 +175,9 @@ const NavBar = () => {
           Dog
         </Button>
       </Link>
-      <Link href="/category/city">
-        <Button
-          className="bg-stone-500 hover:bg-stone-300 text-white 
-          font-bold py-2 px-4 rounded-full"
-          onClick={() => handleTagClick('city')}
-        >
-          City
-        </Button>
-      </Link>
 
       
-      
+
       <Link href="/category/flower">
         <Button
           className="bg-stone-500 hover:bg-stone-300 text-white 
@@ -171,7 +187,27 @@ const NavBar = () => {
           Flower
         </Button>
       </Link>
-      
+
+      <Link href="/category/forrest">
+        <Button
+          className="bg-stone-500 hover:bg-stone-300 text-white 
+          font-bold py-2 px-4 rounded-full"
+          onClick={() => handleTagClick('forrest')}
+        >
+          Forrest
+        </Button>
+      </Link>
+
+      <Link href="/category/house">
+        <Button
+          className="bg-stone-500 hover:bg-stone-300 text-white 
+          font-bold py-2 px-4 rounded-full"
+          onClick={() => handleTagClick('house')}
+        >
+          House
+        </Button>
+      </Link>
+
       <Link href="/category/landscape">
         <Button
           className="bg-stone-500 hover:bg-stone-300 text-white 
@@ -192,6 +228,16 @@ const NavBar = () => {
         </Button>
       </Link>
 
+      <Link href="/category/rabbit">
+        <Button
+          className="bg-stone-500 hover:bg-stone-300 text-white 
+          font-bold py-2 px-4 rounded-full"
+          onClick={() => handleTagClick('rabbit')}
+        >
+          Rabbit
+        </Button>
+      </Link>
+
       <Link href="/category/space">
         <Button
           className="bg-stone-500 hover:bg-stone-300 text-white 
@@ -202,8 +248,18 @@ const NavBar = () => {
         </Button>
       </Link>
 
-      </div>
-    );
-  };
-  
-  export default NavBar;
+      <Link href="/category/squirrel">
+        <Button
+          className="bg-stone-500 hover:bg-stone-300 text-white 
+          font-bold py-2 px-4 rounded-full"
+          onClick={() => handleTagClick('squirrel')}
+        >
+          Squirrel
+        </Button>
+      </Link>
+
+    </div>
+  );
+};
+
+export default NavBar;

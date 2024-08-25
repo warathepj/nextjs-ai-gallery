@@ -1,5 +1,4 @@
 // context/FavoriteContext.js
-//from context/FavoriteContext.js, set favoriteImageIds to array of string
 "use client"
 import { createContext, useState } from 'react';
 

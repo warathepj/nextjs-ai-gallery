@@ -1,21 +1,113 @@
 // app/context/ImageContext.js/
 "use client"
-import { createContext, useState } from 'react';
+import { createContext, useState, useEffect } from 'react';
 
 const ImageContext = createContext();
 
 export const ImageProvider = ({ children }) => {
-  
+
   const baseUrl = 'https://warathepj.github.io/js-ai-gallery/public/image/';
-  // const images = {
-  //   'fri9.jpeg': 'fri9.jpeg',
-  //   'fri10.jpeg': 'fri10.jpeg',
-  //   'fri11.jpeg': 'fri11.jpeg',
-  //   'fri12.jpeg': 'fri12.jpeg',
-  //   'fri13.jpeg': 'fri13.jpeg',
-  // };
-// app/context/ImageContext.js/images.path
   const images = [
+    {
+      path: '080.jpg',
+      prompt: "A squirrel dressed in ancient warrior attire, holding a bow, stands on a cliff looking down below.",
+      tag: ["animal", "squirrel"]
+    },
+    {
+      path: '079.jpg',
+      prompt: "A squirrel dressed in ancient warrior attire, holding a bow, stands on a cliff looking down below.",
+      tag: ["animal", "squirrel"]
+    },
+    {
+      path: '078.jpg',
+      prompt: "A squirrel dressed in ancient warrior attire, holding a bow, stands on a cliff looking down below.",
+      tag: ["animal", "squirrel"]
+    },
+    {
+      path: '077.jpg',
+      prompt: "A squirrel dressed in ancient warrior attire, holding a bow, stands on a cliff looking down below.",
+      tag: ["animal", "squirrel"]
+    },
+    {
+      path: '076.jpg',
+      prompt: "A vibrant synthwave landscape with a large, glowing pink and orange sun setting behind a majestic mountain peak. The sky is filled with neon pink and blue clouds, and the foreground features a tranquil lake reflecting the colorful sunset. The overall atmosphere is dreamy and nostalgic, reminiscent of the 1980s.",
+      tag: ["pink", "landscape"]
+    },
+    {
+      path: '075.jpg',
+      prompt: "A vibrant synthwave landscape with a large, glowing pink and orange sun setting behind a majestic mountain peak. The sky is filled with neon pink and blue clouds, and the foreground features a tranquil lake reflecting the colorful sunset. The overall atmosphere is dreamy and nostalgic, reminiscent of the 1980s.",
+      tag: ["pink", "landscape"]
+    },
+    {
+      path: '074.jpg',
+      prompt: "A vibrant synthwave landscape with a large, glowing pink and orange sun setting behind a majestic mountain peak. The sky is filled with neon pink and blue clouds, and the foreground features a tranquil lake reflecting the colorful sunset. The overall atmosphere is dreamy and nostalgic, reminiscent of the 1980s.",
+      tag: ["pink", "landscape"]
+    },
+    {
+      path: '073.jpg',
+      prompt: "A vibrant synthwave landscape with a large, glowing pink and orange sun setting behind a majestic mountain peak. The sky is filled with neon pink and blue clouds, and the foreground features a tranquil lake reflecting the colorful sunset. The overall atmosphere is dreamy and nostalgic, reminiscent of the 1980s.",
+      tag: ["pink", "landscape"]
+    },
+    {
+      path: '072.jpg',
+      prompt: "A cute cat holding a purple flower.",
+      tag: ['purple', 'animal', 'cat']
+    },
+    {
+      path: '071.jpg',
+      prompt: "A cute cat holding a purple flower.",
+      tag: ['purple', 'animal', 'cat']
+    },
+    {
+      path: '070.jpg',
+      prompt: "A cute cat holding a purple flower.",
+      tag: ['purple', 'animal', 'cat']
+    },
+    {
+      path: '069.jpg',
+      prompt: "A cute cat holding a purple flower.",
+      tag: ['purple', 'animal', 'cat']
+    },
+    {
+      path: '068.jpg',
+      prompt: "An orange house in the middle of a meadow.",
+      tag: ['orange', 'house', 'landscape']
+    },
+    {
+      path: '067.jpg',
+      prompt: "An orange house in the middle of a meadow.",
+      tag: ['orange', 'house', 'landscape']
+    },
+    {
+      path: '066.jpg',
+      prompt: "An orange house in the middle of a meadow.",
+      tag: ['orange', 'house', 'landscape']
+    },
+    {
+      path: '065.jpg',
+      prompt: "An orange house in the middle of a meadow.",
+      tag: ['orange', 'house', 'landscape']
+    },
+    {
+      path: '064.jpg',
+      prompt: "A Jurassic jungle with dinosaurs walking around.",
+      tag: ['green', 'dinosaur', 'forrest']
+    },
+    {
+      path: '063.jpg',
+      prompt: "A Jurassic jungle with dinosaurs walking around.",
+      tag: ['green', 'dinosaur', 'forrest']
+    },
+    {
+      path: '062.jpg',
+      prompt: "A Jurassic jungle with dinosaurs walking around.",
+      tag: ['green', 'dinosaur', 'forrest']
+    },
+    {
+      path: '061.jpg',
+      prompt: "A Jurassic jungle with dinosaurs walking around.",
+      tag: ['green', 'dinosaur', 'forrest']
+    },
     {
       path: '060.jpg',
       prompt: "A stunning night sky scene with Mount Fuji as the focal point.Include the Milky Way stretching across the sky.Use a deep blue sky with twinkling stars.Add a touch of purple and pink hues for a dreamy atmosphere.Capture the silhouette of the mountain against the vibrant night sky.Consider reflecting the scene in a calm lake for added depth.Style:Dramatic and awe-inspiringHigh contrast between light and dark",
@@ -348,7 +440,6 @@ export const ImageProvider = ({ children }) => {
     const allTags = images.flatMap(image => image.tag);
     return [...new Set(allTags)];
   };
-// map and render image, render prompt in p tag of app/page.js/
   return (
     <ImageContext.Provider value={{ baseUrl, images, getUniqueTags }}>
       {children}

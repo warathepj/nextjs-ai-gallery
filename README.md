@@ -1,5 +1,17 @@
 # task
-json server
+deploy -> error -> push and redeploy
+
+# image db
+https://github.com/warathepj/js-ai-gallery
+
+# json page
+https://warathepj.github.io/ai-gallery-json/imagesDb.json
+
+# json repo
+https://github.com/warathepj/ai-gallery-json
+
+# json folder
+D:\Project\Javascript\Project\ai-gallery-json
 
 # ngrok
 https://ngrok.com/docs/getting-started/

@@ -16,23 +16,14 @@ import Favorite from '@/app/components/(icon)/Favorite';
 export default function ImagePage({ params }) {
   const { images, baseUrl } = useContext(ImageContext);
   const { favoriteImageIds, addFavorite, removeFavorite } = useContext(FavoriteContext);
-  // const router = useRouter();
-
   const image = images.find(image => image.path === params.imageId);
   const file = params.imageId;
-  console.log("favoriteImageIds: ", favoriteImageIds);
-  console.log("type of favoriteImageIds: ", typeof favoriteImageIds);
+  // console.log("favoriteImageIds: ", favoriteImageIds);
+  // console.log("type of favoriteImageIds: ", typeof favoriteImageIds);
 
-  // set state isFavorite to context/FavoriteContext
-  // const isFavorite = favoriteImageIds.has(params.id);
-
-  //every time render app/category/[categoryId]/image/[imageId]/page.js/
-  // initial set isFavorite to false
-  // const [isFavorite, setIsFavorite] = useState(false);
   const isFavorite = favoriteImageIds.includes(params.imageId);
-  //state app/image/[id]/page.js/favImage to array of string in context/FavoriteContext
   const favImage = isFavorite ? file : null;
-  console.log("favImage: ", favImage);
+  // console.log("favImage: ", favImage);
 
   const toggleFavorite = () => {
     if (isFavorite) {
@@ -42,57 +33,40 @@ export default function ImagePage({ params }) {
     }
   };
 
-
   return (
     <div>
-      <pre>params.id: {params.imageId}</pre>
+      {/* <pre>params.id: {params.imageId}</pre> */}
 
       {image ? (
-        <>
+        <div class="flex justify-center">
           <Image
             src={`${baseUrl}/${image.path}`} alt={image.prompt}
             width={500}
             height={500}
             className='mb-4'
           />
-          {/* <p>{image.prompt}</p> */}
-        </>
+        </div>
       ) : <p>Image not found</p>}
 
       {image ? <p>Prompt : {image.prompt}</p> : <p>Image not found</p>}
-      {/* //from app/category/[categoryId]/image/[imageId]/page.js/ */}
-      {/* if ${params.categoryId} is favorite, then go to "/favorite" */}
-      {/* <Link href={params.categoryId === 'all' ? '/' : `/category/${params.categoryId}`}> */}
+      
+      <div
+        onClick={() => toggleFavorite(params.id)}
+        className='mt-4 ml-6'
+      >
+        {isFavorite ? <Favorite /> : <FavoriteOutline />}
+      </div>
+
       <Link href={
-  params.categoryId === 'all' ? '/' :
-  params.categoryId === 'favorite' ? '/favorite' :
-  `/category/${params.categoryId}`
-}>
-        <Button className="bg-cyan-500 hover:bg-cyan-300 text-white font-bold mt-4 py-2 px-4 rounded-full">
+        params.categoryId === 'all' ? '/' :
+          params.categoryId === 'favorite' ? '/favorite' :
+            `/category/${params.categoryId}`
+      }>
+        <Button
+          className="bg-cyan-500 hover:bg-cyan-300 text-white font-bold mt-4 mb-4 ml-6 py-2 px-4 rounded-full">
           Back
         </Button>
       </Link>
-
-      {/* <Link href={`/category/${params.categoryId}`}>
-        <Button className="bg-cyan-500 hover:bg-cyan-300 text-white font-bold mt-4 py-2 px-4 rounded-full">
-          Back
-        </Button>
-      </Link> */}
-
-      {/* in context/FavoriteContext */}
-      {/* <div onClick={toggleFavorite} style={{ cursor: 'pointer' }}>  */}
-      <div onClick={() => toggleFavorite(params.id)}>
-        {isFavorite ? <Favorite /> : <FavoriteOutline />}
-      </div>
-      {/* to <Favorite /> in same position*/}
-
-      <pre>params.id: {params.id}</pre>
-      <pre>file: {file}</pre>
-
-      <pre>isFavorite: {isFavorite.toString()}</pre>
-      <pre>favImage: {favImage}</pre>
-
-
     </div>
   );
 }
