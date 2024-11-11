@@ -26,6 +26,17 @@ export default function RootLayout({ children }) {
             <h3
               className="mt-10 mb-2 text-center text-xl"
             >
+              เลี้ยงกาแฟผู้พัฒนา
+            </h3>
+
+            <img
+              className="w-36 mx-auto"
+              src="https://warathepj.github.io/js-ai-gallery/public/image/promptpay-20.png" 
+              alt="promptpay"
+            />
+            <h3
+              className="mt-10 mb-2 text-center text-xl"
+            >
               CorgiDev
             </h3>
 

@@ -1,5 +1,64 @@
+# เลี้ยงกาแฟผู้พัฒนา
 
+!["Alt text"](https://warathepj.github.io/js-ai-gallery/public/image/promptpay-20.png)
 
+# Next.js AI Gallery
+
+## Overview
+
+The Next.js AI Gallery is a web application that showcases a collection of images,
+allowing users to browse, filter, and favorite images. The application is built
+using Next.js and utilizes React Context for state management.
+
+## Features
+
+- **Image Gallery**: Displays a grid of images that can be filtered by tags.
+- **Favorites**: Users can favorite images, which are stored in a context and can be viewed on a separate favorites page.
+- **Dynamic Routing**: Each image can be viewed in detail on its own page.
+- **Load More**: Users can load more images as they scroll through the gallery.
+- **Back to Top**: A button to quickly scroll back to the top of the page.
+
+## Technologies Used
+
+- **Next.js**: A React framework for server-side rendering and static site generation.
+- **React**: A JavaScript library for building user interfaces.
+- **Context API**: For managing global state across the application.
+- **Tailwind CSS**: For styling the components.
+
+## Installation
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/warathepj/nextjs-ai-gallery.git
+   cd nextjs-ai-gallery
+   ```
+
+2. Install dependencies:
+
+   ```bash
+   npm install
+   ```
+
+3. Start the development server:
+
+   ```bash
+   npm run dev
+   ```
+
+4. Open your browser and navigate to `http://localhost:3000`.
+
+## Usage
+
+- Navigate through the gallery to view images.
+- Click on an image to view its details.
+- Use the "Load More" button to load additional images.
+- Click the "Back To Top" button to quickly return to the top of the page.
+- Favorite images to view them later in the favorites section.
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
